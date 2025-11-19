@@ -6,6 +6,7 @@ import { Button } from "@/components/ui/button";
 import { MenuIcon } from "lucide-react";
 import data from "@/lib/data";
 import Search from "./search";
+import logo from "@/public/icons/logo.svg";
 
 const Header = () => {
   return (
@@ -17,12 +18,7 @@ const Header = () => {
               href="/"
               className="flex items-center header-button font-extrabold text-2xl m-1 "
             >
-              <Image
-                src="../../../public/icons/logo.svg"
-                width={40}
-                height={40}
-                alt="{APP_NAME} Logo"
-              />
+              <Image src={logo} width={40} height={40} alt="{APP_NAME} Logo" />
               {APP_NAME}
             </Link>
           </div>
