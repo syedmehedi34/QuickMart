@@ -12,7 +12,6 @@ import {
 import useCartStore from "@/hooks/use-cart-store";
 import { useToast } from "@/hooks/use-toast";
 import { OrderItem } from "@/types";
-import { useTranslations } from "next-intl";
 import { useRouter } from "next/navigation";
 import { useState } from "react";
 
@@ -28,10 +27,7 @@ export default function AddToCart({
 
   const { addItem } = useCartStore();
 
-  //PROMPT: add quantity state
   const [quantity, setQuantity] = useState(1);
-
-  const t = useTranslations();
 
   return minimal ? (
     <Button
@@ -40,14 +36,14 @@ export default function AddToCart({
         try {
           addItem(item, 1);
           toast({
-            description: t("Product.Added to Cart"),
+            description: "Product.Added to Cart",
             action: (
               <Button
                 onClick={() => {
                   router.push("/cart");
                 }}
               >
-                {t("Product.Go to Cart")}
+                Go to Cart
               </Button>
             ),
           });
@@ -59,7 +55,7 @@ export default function AddToCart({
         }
       }}
     >
-      {t("Product.Add to Cart")}
+      Add to Cart
     </Button>
   ) : (
     <div className="w-full space-y-2">
@@ -68,9 +64,7 @@ export default function AddToCart({
         onValueChange={(i) => setQuantity(Number(i))}
       >
         <SelectTrigger className="">
-          <SelectValue>
-            {t("Product.Quantity")}: {quantity}
-          </SelectValue>
+          <SelectValue>Quantity: {quantity}</SelectValue>
         </SelectTrigger>
         <SelectContent position="popper">
           {Array.from({ length: item.countInStock }).map((_, i) => (
@@ -96,7 +90,7 @@ export default function AddToCart({
           }
         }}
       >
-        {t("Product.Add to Cart")}
+        Add to Cart
       </Button>
       <Button
         variant="secondary"
@@ -113,7 +107,7 @@ export default function AddToCart({
         }}
         className="w-full rounded-full "
       >
-        {t("Product.Buy Now")}
+        Buy Now
       </Button>
     </div>
   );

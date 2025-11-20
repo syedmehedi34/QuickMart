@@ -73,7 +73,7 @@ const useCartStore = create(
       init: () => set({ cart: initialState }),
     }),
     {
-      name: "cart-store", // name of the item in the storage
+      name: "cart-store",
     }
   )
 );
