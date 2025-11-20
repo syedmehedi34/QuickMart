@@ -11,3 +11,5 @@ export const APP_SLOGAN =
 export const APP_DESCRIPTION =
   process.env.NEXT_PUBLIC_APP_DESCRIPTION ||
   "The ultimate online marketplace for all your shopping needs.";
+
+export const PAGE_SIZE = Number(process.env.PAGE_SIZE || 9);
