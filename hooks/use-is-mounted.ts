@@ -1,13 +1,14 @@
-import { useEffect, useState } from 'react'
+/* eslint-disable react-hooks/set-state-in-effect */
+import { useEffect, useState } from "react";
 
 function useIsMounted() {
-  const [isMounted, setIsMounted] = useState(false)
+  const [isMounted, setIsMounted] = useState(false);
 
   useEffect(() => {
-    setIsMounted(true)
-  }, [])
+    setIsMounted(true);
+  }, []);
 
-  return isMounted
+  return isMounted;
 }
 
-export default useIsMounted
+export default useIsMounted;
