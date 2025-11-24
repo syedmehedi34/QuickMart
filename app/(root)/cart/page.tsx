@@ -165,6 +165,7 @@ export default function CartPage() {
                       Choose this option at checkout
                     </div>
                   )}
+
                   <div className="text-lg">
                     Subtotal (
                     {items.reduce((acc, item) => acc + item.quantity, 0)}{" "}
