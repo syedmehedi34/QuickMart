@@ -14,7 +14,7 @@ type CardItem = {
   }[];
 };
 
-const HomeCard = ({ cards }: { cards: CardItem[] }) => {
+export function HomeCard({ cards }: { cards: CardItem[] }) {
   return (
     <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 md:gap-4">
       {cards.map((card) => (
@@ -53,6 +53,4 @@ const HomeCard = ({ cards }: { cards: CardItem[] }) => {
       ))}
     </div>
   );
-};
-
-export default HomeCard;
+}

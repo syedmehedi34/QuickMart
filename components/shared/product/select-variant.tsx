@@ -13,7 +13,7 @@ export default function SelectVariant({
 }) {
   const selectedColor = color || product.colors[0];
   const selectedSize = size || product.sizes[0];
-  //
+
   return (
     <>
       {product.colors.length > 0 && (

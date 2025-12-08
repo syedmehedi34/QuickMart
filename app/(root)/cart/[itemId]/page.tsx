@@ -7,4 +7,3 @@ export default async function CartAddItemPage(props: {
 
   return <CartAddItem itemId={itemId} />;
 }
-// 2;18

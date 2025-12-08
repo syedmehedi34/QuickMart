@@ -16,11 +16,15 @@ export default function BrowsingHistoryList({
       <div className="bg-background">
         <Separator className={cn("mb-4", className)} />
         <ProductList
-          title="Related to items that you've viewed"
+          title={"Related to items that you've viewed"}
           type="related"
         />
         <Separator className="mb-4" />
-        <ProductList title="Your browsing history" hideDetails type="history" />
+        <ProductList
+          title={"Your browsing history"}
+          hideDetails
+          type="history"
+        />
       </div>
     )
   );

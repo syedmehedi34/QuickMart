@@ -15,6 +15,7 @@ import { APP_NAME, FREE_SHIPPING_MIN_PRICE } from "@/lib/constants";
 import Image from "next/image";
 import Link from "next/link";
 import { useRouter } from "next/navigation";
+import React from "react";
 
 export default function CartPage() {
   const {
@@ -23,7 +24,6 @@ export default function CartPage() {
     removeItem,
   } = useCartStore();
   const router = useRouter();
-
   return (
     <div>
       <div className="grid grid-cols-1 md:grid-cols-4  md:gap-4">
@@ -33,7 +33,7 @@ export default function CartPage() {
               Your Shopping Cart is empty
             </CardHeader>
             <CardContent>
-              Continue shopping on <Link href="/">{APP_NAME}</Link>,
+              Continue shopping on <Link href="/">{APP_NAME}</Link>
             </CardContent>
           </Card>
         ) : (
@@ -72,11 +72,11 @@ export default function CartPage() {
                         </Link>
                         <div>
                           <p className="text-sm">
-                            <span className="font-bold"> Color</span>
+                            <span className="font-bold">Color: </span>{" "}
                             {item.color}
                           </p>
                           <p className="text-sm">
-                            <span className="font-bold">Size:</span>
+                            <span className="font-bold">Size: </span>{" "}
                             {item.size}
                           </p>
                         </div>
@@ -133,8 +133,8 @@ export default function CartPage() {
 
                   <div className="flex justify-end text-lg my-2">
                     Subtotal (
-                    {items.reduce((acc, item) => acc + item.quantity, 0)} {"-"}
-                    Items:{" "}
+                    {items.reduce((acc, item) => acc + item.quantity, 0)}{" "}
+                    Items):{" "}
                     <span className="font-bold ml-1">
                       <ProductPrice price={itemsPrice} plain />
                     </span>{" "}
@@ -165,7 +165,6 @@ export default function CartPage() {
                       Choose this option at checkout
                     </div>
                   )}
-
                   <div className="text-lg">
                     Subtotal (
                     {items.reduce((acc, item) => acc + item.quantity, 0)}{" "}

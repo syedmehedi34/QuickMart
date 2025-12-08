@@ -1,6 +1,7 @@
-/* eslint-disable react-hooks/static-components */
 import Image from "next/image";
 import Link from "next/link";
+import React from "react";
+
 import {
   Card,
   CardContent,
@@ -76,7 +77,6 @@ const ProductCard = ({
       />
     </div>
   );
-
   const AddButton = () => (
     <div className="w-full text-center">
       <AddToCart

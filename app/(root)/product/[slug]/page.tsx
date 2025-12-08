@@ -67,7 +67,7 @@ export default async function ProductDetails(props: {
               <div className="flex items-center gap-2">
                 <span>{product.avgRating.toFixed(1)}</span>
                 <Rating rating={product.avgRating} />
-                <span>{product.numReviews}</span>
+                <span>{product.numReviews} ratings</span>
               </div>
               <Separator />
               <div className="flex flex-col gap-3 sm:flex-row sm:items-center">
@@ -100,7 +100,6 @@ export default async function ProductDetails(props: {
             <Card>
               <CardContent className="p-4 flex flex-col  gap-4">
                 <ProductPrice price={product.price} />
-
                 {product.countInStock > 0 && product.countInStock <= 3 && (
                   <div className="text-destructive font-bold">
                     {`Only ${product.countInStock} left in stock - order soon`}
@@ -111,7 +110,6 @@ export default async function ProductDetails(props: {
                 ) : (
                   <div className="text-destructive text-xl">Out of Stock</div>
                 )}
-
                 {product.countInStock !== 0 && (
                   <div className="flex justify-center items-center">
                     <AddToCart
@@ -143,7 +141,6 @@ export default async function ProductDetails(props: {
           title={`Best Sellers in ${product.category}`}
         />
       </section>
-
       <section>
         <BrowsingHistoryList className="mt-10" />
       </section>

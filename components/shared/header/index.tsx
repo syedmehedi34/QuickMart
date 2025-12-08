@@ -6,9 +6,8 @@ import { Button } from "@/components/ui/button";
 import { MenuIcon } from "lucide-react";
 import data from "@/lib/data";
 import Search from "./search";
-import logo from "@/public/icons/logo.svg";
 
-const Header = () => {
+export default function Header() {
   return (
     <header className="bg-black  text-white">
       <div className="px-2">
@@ -18,7 +17,12 @@ const Header = () => {
               href="/"
               className="flex items-center header-button font-extrabold text-2xl m-1 "
             >
-              <Image src={logo} width={40} height={40} alt="{APP_NAME} Logo" />
+              <Image
+                src="/icons/logo.svg"
+                width={40}
+                height={40}
+                alt={`${APP_NAME} logo`}
+              />
               {APP_NAME}
             </Link>
           </div>
@@ -31,7 +35,7 @@ const Header = () => {
           <Search />
         </div>
       </div>
-      <div className="flex items-center px-3 mb-px  bg-gray-800">
+      <div className="flex items-center px-3 mb-[1px]  bg-gray-800">
         <Button
           variant="ghost"
           className="dark header-button flex items-center gap-1 text-base [&_svg]:size-6"
@@ -44,7 +48,7 @@ const Header = () => {
             <Link
               href={menu.href}
               key={menu.href}
-              className="header-button p-2! "
+              className="header-button !p-2"
             >
               {menu.name}
             </Link>
@@ -53,6 +57,4 @@ const Header = () => {
       </div>
     </header>
   );
-};
-
-export default Header;
+}

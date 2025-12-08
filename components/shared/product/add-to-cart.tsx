@@ -36,7 +36,7 @@ export default function AddToCart({
         try {
           addItem(item, 1);
           toast({
-            description: "Product.Added to Cart",
+            description: "Added to Cart",
             action: (
               <Button
                 onClick={() => {

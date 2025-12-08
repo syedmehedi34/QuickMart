@@ -41,10 +41,10 @@ export default function CartAddItem({ itemId }: { itemId: string }) {
                 Added to cart
               </h3>
               <p className="text-sm">
-                <span className="font-bold">Color: </span> {item.color ?? "-"}
+                <span className="font-bold"> Color: </span> {item.color ?? "-"}
               </p>
               <p className="text-sm">
-                <span className="font-bold">Size: </span> {item.size ?? "-"}
+                <span className="font-bold"> Size: </span> {item.size ?? "-"}
               </p>
             </div>
           </CardContent>

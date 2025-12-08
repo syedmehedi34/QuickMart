@@ -1,7 +1,7 @@
 /* eslint-disable @typescript-eslint/no-explicit-any */
 "use client";
 import Image from "next/image";
-import { useState, useRef } from "react";
+import { useState } from "react";
 
 const ImageHover = ({
   src,
@@ -13,14 +13,13 @@ const ImageHover = ({
   alt: string;
 }) => {
   const [isHovered, setIsHovered] = useState(false);
-  const hoverTimeout = useRef<any>(null);
-
+  let hoverTimeout: any;
   const handleMouseEnter = () => {
-    hoverTimeout.current = setTimeout(() => setIsHovered(true), 1000);
+    hoverTimeout = setTimeout(() => setIsHovered(true), 1000); // 1 second delay
   };
 
   const handleMouseLeave = () => {
-    clearTimeout(hoverTimeout.current);
+    clearTimeout(hoverTimeout);
     setIsHovered(false);
   };
 
