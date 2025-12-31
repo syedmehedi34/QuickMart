@@ -45,6 +45,7 @@
     "zustand": "^5.0.8"
   },
   "devDependencies": {
+    "@react-email/preview-server": "^5.1.1",
     "@tailwindcss/postcss": "^4",
     "@types/bcryptjs": "^2.4.6",
     "@types/node": "^20",
